@@ -10,6 +10,7 @@ def call(Map pipelineParams = [:]) {
             stage('Hello') {
                 steps {
                     echo 'Hello World'
+                    echo "$GIT_URL"
                     createGithubRelease(repo: "owner/repo")
                 }
             }
